@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.hardware.SensorManager
 import android.content.Context
 import android.R
+import android.content.Intent
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_motion.*
@@ -69,18 +70,21 @@ class MotionActivity : AppCompatActivity(), SensorEventListener, TextToSpeech.On
 
         btn_reset.setOnClickListener {
             resetValues()
+
+            speakOut("Ține telefonul în mâna stângă pe lângă cord și ridică ușor mâna în față cu palma în sus. Repetă testul cu mâna dreaptă")
         }
 
         btn_Left.setOnClickListener {
             state = State.LEFT
-
-            speakOut("Ține telefonul în mâna stângă pe lângă cord și ridică ușor mâna în față cu palma în sus ")
         }
 
         btn_Right.setOnClickListener {
             state = State.RIGHT
+        }
 
-            speakOut("Ține telefonul în mâna dreaptă  pe lângă cord și ridică ușor mâna în față cu palma în sus ")
+        btn_stop.setOnClickListener {
+            startActivity(Intent(this,CallActivity::class.java))
+            finish()
         }
 
         tts = TextToSpeech(this, this)

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -26,17 +27,17 @@ class HomeFragment : Fragment() {
             ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
 
-        val btnMotion: Button = root.findViewById(R.id.btn_motion)
+        val btnMotion: ImageView = root.findViewById(R.id.btn_motion)
         btnMotion.setOnClickListener {
             startActivity(Intent(context, MotionActivity::class.java))
         }
 
-        val btnDexterity: Button = root.findViewById(R.id.btn_dexterity)
+        val btnDexterity: ImageView = root.findViewById(R.id.btn_dexterity)
         btnMotion.setOnClickListener {
             startActivity(Intent(context, MotionActivity::class.java))
         }
 
-        val btnQuestion: Button = root.findViewById(R.id.btn_question)
+        val btnQuestion: ImageView = root.findViewById(R.id.btn_question)
         btnMotion.setOnClickListener {
             startActivity(Intent(context, MotionActivity::class.java))
         }
